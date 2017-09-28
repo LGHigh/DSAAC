@@ -1,0 +1,168 @@
+2.1
+2/N,37,N^(1/2),N,N*log(log(N)),N*log(N),N*log(N^2),N*(log(N))^2,N^(1.5),N^2,N^2*log(N),N^3,2^N\
+
+2.2
+a.ture
+b.false
+c.false
+d.false
+
+2.3
+N^(1+t/(log(N))^2)
+
+2.4
+L'Hospital rule
+
+2.5
+f(x)=sin(x);
+g(x)=cos(x);
+
+2.6
+(1)O(N)
+(2)O(N^2)
+(3)O(N^3)
+(4)O(N^2)
+(5)O(N^5)
+(6)O(N^4)
+
+2.7
+a.J.Bentley,"Programming Pearls", Communications of the ACM 30(1987),745-757
+b.
+(1)O(N^2)
+(2)O(N)
+(3)O(N)
+c.???
+d.???
+e.???
+
+2.8
+Algorithm 1:
+5 days for N=10000
+14.2 years for N=100000
+140 centuries for N=1000000
+Algorithm 2:
+3 hours for N=100000
+2 weeks for N=1000000
+Algorithm 3:
+1^(1/2) minutes for N=1000000
+Algorithm 4:
+3 seconds for N=1000000
+
+2.9
+(a)O(N^2)
+(b)O(N*log(N))
+
+2.10
+a.F(X)=(((4*X+8)*X+1)*X+2)
+b.because it can
+c.O(N)
+
+2.11
+Binary-Search
+O(log(N))
+
+2.12
+O(N)
+int MinSubquenceSum(const int A[],int N){
+    int ThisSum,MinSum,j;
+
+    ThisSum=MinSum=0;
+    for(j=0;j<N;j++){
+	ThisSum+=A[j];
+
+	if(ThisSum<MaxSum)
+	    MinSum=ThisSum;
+	else if(ThisSum<0)
+	    ThisSum=0;
+    }
+]
+b.???
+c.???
+
+2.13
+a.
+bool IsPrime(int N){
+    int i;
+    for(i=0;i*i<N;i++){
+        if(N % i == 0)
+	    return ture;
+    }
+    return false;
+}
+b.
+O(N^(1/2))
+c.B=log(N)
+d.O(2^(B/2))
+e.20-bit:T;40-bit:T^2;
+f.B is the better measure because it more accurately represents the size of  the input.
+
+2.14
+     
+2.15
+x^1->x^2->x^4->x^8->x^16->x^32
+x^32*x^16*x^8*x
+
+2.16
+long int Pow(long int x,unsigned int N){
+    vector<int> h;
+    long int tot=x;
+    while(N!=1){
+        if(N % 2 == 1)h.pushback(1);
+	else h.pushback(0);
+	N/=2;
+    }
+    for(int i=h.size()-1;i>=0;i--){
+        if(h[i]==0)tot=tot*tot;
+	else tot=tot*tot*x;
+    }
+    return tot;
+}
+
+2.17
+sum=log(N)
+
+2.18
+a.A
+b.B
+c.B
+d.false
+
+2.19
+a.When there are only two or less elements in B
+b.We can look for the majority element in the rest N-1 elements,if there is a majority element then return this, else make sure if the Nth is the majority element.
+c.O(N)
+d.we can swap elements in the array.
+e.
+???
+
+2.20
+Otherwise, we could perform operations in parallel by cleverly encoding several integers into one.
+
+2.21
+a.O(R^3+C^3+W^3)
+b.iterally
+
+2.22
+No,there will be a endless loop.
+
+2.23
+int BinarySearch(const ElementType A [], ElementType X,int N){
+    int Right,Left;
+    Left=0,Right=N-1;
+    while(Right>Left){
+        if(A[(Right+Left)/2]>X){
+	    Right=(Right+Left)/2;
+	}
+	else if(A[(Right+Left)/2]<X){
+	    Left=(Right+Left+1)/2;
+	}
+	else return (Right+Left)/2;
+    }
+    return NotFound;
+}
+
+2.24
+No,if Left=3 and Right=4,then Center=3,and Center-1=2. This will make the iteration endlessly.
+
+2.25
+???
