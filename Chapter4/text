@@ -1,0 +1,55 @@
+4.1
+  a.A
+  b.G,H,I,L,M,K
+
+4.2
+  a.A->NULL,B->A,C->A,D->B,E->B,F->C,G->D,H->D,I->E,J->E,K->F,L->J,M->J
+  b.A:B,C; B:D,E; C:F; D:G,H; E:I,J; F:K; J:L,M;
+  c.B<->C,D<->E,G<->H,I<->J,L<->M
+  d.A:0,B:1,C:0,D:2,E:2,F:2,G:3,H:3,I:3,J:3,K:3,L:4,M:4
+  e.A:4,B:3,C:2,D:1,E:2,F:1,G:0,H:0,I:0,J:1,K:0,L:0,M:0
+
+4.3
+  4
+
+4.4
+  We have N points, so we need 2*N points for son.Except the root, other points all have parent, so the NULL only has 2*N-N+1=N+1
+
+4.5
+  the full binary tree have the most points. The Points are 1+2^1+...+2^(N)=2^(N+1)-1
+
+4.6
+  If the full nodes' number is N.There will be N+1 branch. So we have N+1 leaves.
+
+4.7
+  We know if the deepth is N, then the leaves will at most be 2^N.So unless that is the full binary tree,the sum will alway be smaller than 1.
+
+4.8
+  Prefix expression:(- (* (* a b) (+ c d)) e)
+  infix expression:a*b*(c+d)-e
+  suffix expression:(((a b *) (c d +) *) e -)
+
+4.9
+  a. 3->1
+         ->2
+      ->4
+         ->6->5
+            ->9->7
+  b.4->1
+        ->2
+     ->6->5
+        ->9->7
+
+4.10
+  in the BinaryTree.h
+
+4.11
+  in the BinaryTree.h
+
+4.12
+  a.Keep a bit array B.If i is in the tree,then B[i] is true,otherwise,it is false.Repeatedly generate random intergers until an unusual one is found.If there are N elements already in the tree,then M-N are not,and the probability of finding one of these is (M-N)/M.Thus the expected number of trials is M/(M-N)=a/(a-1)
+  b.To find an element that is in the tree, repeatedly generate random integers until an already-used integer is found.The probability of finding one is N/M,so the expected number of trials is M/N=a
+  c.a=2
+
+4.13
+  
