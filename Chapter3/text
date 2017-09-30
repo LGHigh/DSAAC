@@ -10,9 +10,13 @@
 
 3.6:O(N+M)
 
-3.7:???
+3.7:
+  a.in test/3.7.cpp
+  b.
+  c.
+  d.
 
 3.10:
-a.in the Josephus.cpp
-b.O(N*M) or O(N^2)
-c.O(N)
+  a.in the Josephus.cpp
+  b.O(N*M) or O(N^2)
+  c.O(N)

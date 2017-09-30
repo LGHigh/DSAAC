@@ -52,4 +52,42 @@
   c.a=2
 
 4.13
+  b is the best for balance,and c is the best for time of CPU.
+
+4.14
+  ???
+
+4.15
+  a.X(H)=X(H-1)+X(H-2)+1;X(1)=1;X(2)=2;
+  b.X(15)=1596
+
+4.16
+  4
+  | \
+  2   5
+  |\  | \
+  1 3 6  9
+       \
+        7
+
+4.17
+  ???
+
+4.18
+  in the AVLTree.h
+
+4.19
+  in the AVLTree.h
+
+4.20
+  ???
+
+4.21
+  192 bit
+
+4.22
+  ???
+
+4.23
+  
   

@@ -35,6 +35,41 @@ AvlTree Tree::Insert(ElementType X){
     }
   }
 
+  /*Without Recursion*/
+/*
+  Position Tmp=this;
+  while(Tmp!=NULL){
+    if(X<Tmp->Element){
+      Tmp->Height++;
+      if(Tmp->Left!=NULL && (Tmp->Right==NULL || Tmp->Left->Height-Tmp->Right->Height==1)){
+        if(X<Tmp->Left->Element)
+	  Tmp=Tmp->SingleRotateWithLeft();
+	else 
+	  Tmp=Tmp->DoubleRotateWithRight();
+      }
+      Tmp=Tmp->Left;
+    }
+    else {
+      Tmp->Height++;
+      if(Tmp->Right!=NULL && (Tmp->Left==NULL || Tmp->Right->Height-Tmp->left->Height==1)){
+        if(X>Tmp->Left->Element)
+	  Tmp=Tmp->SingleRotateWithRight();
+	else
+	  Tmp=Tmp->DoubleRotateWithLeft();
+      }
+      Tmp=Tmp->Right;
+    }
+  }
+  Tmp=new Tree;
+  if(Tmp==NULL)
+    FatalError("Out of Space");
+  else{
+    Tmp->Element=X;
+    Tmp->Height=0;
+    Tmp->Left=Tmp->Right=NULL;
+  }
+*/
+
   this->Height=max(this->Left->Height,this->Right->Height)+1;
   return this;
 }
