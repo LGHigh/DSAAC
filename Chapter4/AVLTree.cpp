@@ -74,6 +74,27 @@ AvlTree Tree::Insert(ElementType X){
   return this;
 }
 
+Position Tree::Delete(ElementType X){
+  Position Tmp=this;
+  while(Tmp!=NULL && Tmp->Element!=X){
+    if(Tmp->Element>X){
+      Tmp->Height--;
+      if(Tmp->Right!=NULL && Tmp->Left!=NULL && Tmp->Right->Height-Tmp->Left->Height==1)
+	Tmp=Tmp->SingleRotateWithRight();
+      Tmp=Tmp->Left;
+    }
+    else {
+      Tmp->Height--;
+      if(Tmp->Left!=NULL && Tmp->Right!=NULL && Tmp->Left->Height-Tmp->Right->Height==1)
+	Tmp=Tmp->SingleRotateWithLeft();
+      Tmp=Tmp->Right;
+    }
+  }
+
+  delete Tmp;
+  return this;
+}
+
 Position Tree::SingleRotateWithLeft(){
   Position K1;
   
@@ -101,6 +122,22 @@ Position Tree::SingleROtateWithRight(){
 Position Tree::DoubleRotateWithLeft(){
   this->Left=this->Left->SingleRotateWithRight();
   return this->SingleRotateWithLeft();
+/*
+  Position K1,K2;
+
+  K1=this->Left;
+  K2=K1->Right;
+
+  K1->Right=K2->Left;
+  this->Left=K2->Right;
+  K2->Left=K1;
+  K2->Right=this;
+  K1->Height=Max(K1->Left->Height,K1->Right->Height)+1;
+  this->Height=Max(this->Left->Height,this->Right->Height)+1;
+  K2->Height=Max(K1->Height,K3->Height)+1;
+
+  return this
+*/
 }
 
 Position Tree::DoubleRotateWithRight(){

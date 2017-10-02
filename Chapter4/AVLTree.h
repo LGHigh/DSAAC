@@ -12,6 +12,7 @@ class Tree{
   Position FindMin();
   Position FindMax();
   AvlTree Insert(ElementType X);
+  AvlTree Delete(ElementType X);
   Position SingleRotateWithLeft();
   Position SingleRotateWithRight();
   Position DoubleRotateWithLeft();
