@@ -1,6 +1,7 @@
 #ifndef _LeftHeap_H
 #define H->Insert(X) (H=H->Insert1(X))
 #define H->DeleteMin() (H=H->DeleteMin1())
+#define ElementType int
 
 class TreeNode;
 typedef class TreeNode* PriorityQueue;
